@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <formulaire class="js"></formulaire>
+        <style>
+            form {
+                margin-top: 20px;
+            }
+        </style>
+    </title>
+</head>
+
+<body>
+    <form action="formulaire.js" method="POST">
+        <label for="entreprise">Société :</label>
+        <input type="text" name="entreprise" id="entreprise"><br><br>
+    </form>
+
+    <form id="formulaire">
+        E-mail <input type="text" id="email">
+        <input type="submit" value="Envoyer" />
+    </form>
+
+    <script>
+        var form = document.getElementById("formulaire");
+        form.addEventListener("submit",function(e){
+        var email = document.getElementById("email");
+        if (email.value == "") {
+            email.value = "Veuillez saisir votre adresse";
+            e.preventDefault();// Empêche l'envoi du formulaire
+        }
+});
+    </script>
+
+</body>
+
+</html>
